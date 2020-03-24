@@ -1,26 +1,73 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//------------------------------------------
+//      Needed Imports
+//------------------------------------------
+import { 
+        BrowserRouter as Router, 
+        Switch, 
+        Route,
+        Link
+        } from "react-router-dom"
 
-export default App;
+//------------------------------------------
+//      Components Imported
+//------------------------------------------
+import TinderData from  './db/TinderData'
+import TinderIndex from './pages/TinderIndex'
+import TinderShow from  './pages/TinderShow'
+
+
+export default function() {
+
+    // - - - - - - - -
+    console.table(TinderData)
+    // - - - - - - - -
+
+
+  return (
+    <React.Fragment>
+      {/**********************************************/}
+      {/*                  Testings                  */}
+      {/**********************************************/}
+      {/*
+
+      Apple
+      <TinderIndex/>
+      <TinderShow/>
+
+      <br/>
+
+      { TinderData[1].description }
+
+    */}
+    {/**********************************************/}
+
+
+    <Router>
+        <Switch>
+                {/*           -  Example:
+            <Route
+                path="/recipes/:id"
+                render={ (props) => <Recipe {...props} recipes={ this.state.allRecipes } /> }
+            />
+                */}
+            
+            <Route
+                path="/profile/:id"
+                render={ (props) => <TinderShow {...props} profiles={ TinderData } /> }
+            />
+            <Route
+                path="/"
+                render={ (props) => <TinderIndex {...props} profiles={ TinderData } /> }
+            />
+            
+
+        </Switch>
+    </Router>
+
+
+    </React.Fragment>
+  )
+}
