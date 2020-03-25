@@ -18,7 +18,7 @@ import {
 import TinderData from  './db/TinderData'
 import TinderIndex from './pages/TinderIndex'
 import TinderShow from  './pages/TinderShow'
-
+import NewSlinky from  './pages/NewSlinky'
 
 export default function() {
 
@@ -58,6 +58,10 @@ export default function() {
             <Route
                 path="/profile/:id"
                 render={ (props) => <TinderShow {...props} profiles={ TinderData } /> }
+            />
+            <Route
+                path="/create"
+                render={ (props) => <NewSlinky {...props} profiles={ TinderData } /> }
             />
             <Route
                 path="/"
