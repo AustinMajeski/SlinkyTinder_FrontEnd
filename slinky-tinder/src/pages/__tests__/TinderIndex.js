@@ -11,3 +11,8 @@ it('TinderIndex renders wihtout crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(<TinderIndex profiles={ TinderData } />, div)
 })
+
+it('CatIndex renders content', () => {
+    const tinderIndex = mount(<TinderIndex profiles={ TinderData } />)
+expect(tinderIndex.find('h1').text()).toEqual('TinderIndex')
+})
