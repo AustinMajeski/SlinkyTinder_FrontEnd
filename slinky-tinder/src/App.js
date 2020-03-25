@@ -5,9 +5,9 @@ import './App.css';
 //------------------------------------------
 //      Needed Imports
 //------------------------------------------
-import { 
-        BrowserRouter as Router, 
-        Switch, 
+import {
+        BrowserRouter as Router,
+        Switch,
         Route,
         Link
         } from "react-router-dom"
@@ -54,7 +54,7 @@ export default function() {
                 render={ (props) => <Recipe {...props} recipes={ this.state.allRecipes } /> }
             />
                 */}
-            
+
             <Route
                 path="/profile/:id"
                 render={ (props) => <TinderShow {...props} profiles={ TinderData } /> }
@@ -63,7 +63,7 @@ export default function() {
                 path="/"
                 render={ (props) => <TinderIndex {...props} profiles={ TinderData } /> }
             />
-            
+
 
         </Switch>
     </Router>
