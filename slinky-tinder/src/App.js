@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-//*******   ME CHANGERS   **//
 
 //------------------------------------------
 //      Needed Imports
@@ -25,7 +24,6 @@ export default function() {
 
     // - - - - - - - -
     console.table(TinderData)
-    //fdjglfkgjkj
     // - - - - - - - -
 
 
